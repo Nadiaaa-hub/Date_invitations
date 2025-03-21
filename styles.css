@@ -1,0 +1,258 @@
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 65px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  max-width: 700px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.second-window,
+.third-window,
+.fourth-window,
+.fifth-window,
+.six-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 65px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  max-width: 400px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body {
+  background-color: rgb(11, 134, 196);
+  font-family: "Funnel Sans", sans-serif;
+  font-size: 20px;
+  color: gray;
+  max-width: 1473px;
+}
+h1 {
+  font-size: 50px;
+  color: black;
+}
+
+button {
+  background-color: rgb(11, 134, 196);
+  color: azure;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 15px;
+  cursor: pointer;
+}
+input {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 9px 85px;
+  border: 2px solid rgb(11, 134, 196);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  padding-left: 10px;
+}
+.input-third,
+.input-fourth,
+.input-fifth {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 9px 160px;
+  background-color: white;
+  border: 2px solid rgb(11, 134, 196);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  padding-left: 10px;
+}
+/* {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding-left: 160px;
+  background-color: white;
+  border: 2px solid rgb(11, 134, 196);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  padding-left: 10px;
+  padding: 9px 230px;
+} */
+input:focus {
+  border: 2px solid palevioletred;
+  box-shadow: 0 0 5px palevioletred;
+}
+
+.gif {
+  max-width: 400px;
+  height: auto;
+}
+.gif-cat {
+  max-width: 200px;
+  height: auto;
+}
+.image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  z-index: 10000;
+}
+
+.image-container.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.time-title {
+  margin: 5px 0px;
+}
+.time {
+  margin: 15px 0px;
+}
+.full-screen {
+  position: fixed;
+  transition: opacity 0.2s step-start;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 9999;
+}
+.full-screen.visible {
+  opacity: 1;
+}
+.full-screen.hidden {
+  opacity: 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+.button-enter-pressed {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+.date-type-buttons {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.fourth-next-button {
+  color: white;
+  background-color: rgb(61, 190, 47);
+  border: 2px solid rgb(61, 190, 47);
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 5px 15px;
+  font-size: 20px;
+}
+.fourth-cancel-button,
+.cancel-button {
+  color: white;
+  background-color: rgb(195, 46, 46);
+  border: 2px solid rgb(195, 46, 46);
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 5px 15px;
+  font-size: 20px;
+}
+
+.yes-button {
+  color: white;
+  background-color: rgb(61, 190, 47);
+  border: 2px solid rgb(61, 190, 47);
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 10px 10px;
+  font-size: 20px;
+  transition: box-shadow 0.3s ease, transform 0.15s ease-in-out;
+}
+.yes-button:hover {
+  box-shadow: 0px 0px 10px rgb(61, 190, 47);
+  transform: scale(1.1);
+}
+
+.no-button {
+  color: white;
+  background-color: rgb(195, 46, 46);
+  border: 2px solid rgb(195, 46, 46);
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 10px 10px;
+  font-size: 20px;
+  transition: box-shadow 0.3s ease, transform 0.15s ease-in-out;
+}
+.no-button:hover {
+  box-shadow: 0px 0px 10px rgb(195, 46, 46);
+  transform: scale(1.1);
+}
+
+.maybe-button {
+  color: white;
+  background-color: rgb(62, 120, 255);
+  border: 2px solid rgb(62, 120, 255);
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 10px 10px;
+  font-size: 20px;
+  transition: box-shadow 0.3s ease, transform 0.15s ease-in-out;
+}
+.maybe-button:hover {
+  box-shadow: 0px 0px 10px rgb(62, 120, 255);
+  transform: scale(1.1);
+}
+
+.next-button {
+  color: white;
+  background-color: rgb(61, 190, 47);
+  border: 2px solid rgb(61, 190, 47);
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 5px 15px;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
