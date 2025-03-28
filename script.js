@@ -163,7 +163,6 @@ if (fourthNextButton) {
       alert("Please enter a place!");
       return;
     }
-    console.log("Selected place:", selectedOptionPlace);
 
     document.getElementById("chosen-place-type").textContent =
       selectedOptionPlace;
