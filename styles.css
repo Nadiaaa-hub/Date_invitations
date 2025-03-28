@@ -46,6 +46,9 @@ body {
   font-size: 20px;
   color: gray;
   max-width: 1473px;
+  background-image: url(./img/blue\ aura.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 h1 {
   font-size: 50px;
@@ -158,11 +161,6 @@ input:focus {
   opacity: 0;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-around;
-  gap: 10px;
-}
 .button-enter-pressed {
   transform: scale(1.2);
   transition: transform 0.2s ease;
@@ -171,6 +169,31 @@ input:focus {
   display: flex;
   margin-top: 30px;
   justify-content: space-around;
+  gap: 10px;
+}
+/* border: 2px solid rgb(77, 77, 181);
+  border-radius: 50px; */
+.arrow {
+  transform: rotate(-90deg);
+  margin-top: 50px;
+  padding: 10px 7px;
+  background-color: white;
+  color: rgb(77, 77, 181);
+
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 50px;
+  right: 26px;
+  display: none;
+}
+
+.window:not(:first-child) .arrow {
+  display: block; /* Показуємо кнопку на всіх вікнах, крім першого */
+}
+
+.buttons {
+  display: flex;
   gap: 10px;
 }
 

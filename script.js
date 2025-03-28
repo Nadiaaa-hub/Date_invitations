@@ -103,7 +103,7 @@ if (maybeButton) {
     //     }
     //   }
     // }
-    alert("Incorrect answer");
+    alert("Incorrect answer (｡•̀ ⤙ •́ ｡ꐦ) !!!");
     secondWindow.classList.add("hidden");
     inputContainer.classList.remove("hidden");
   });
@@ -171,36 +171,70 @@ if (fourthNextButton) {
     document.querySelector(".fourth-window").classList.add("hidden");
     document.querySelector(".fifth-window").classList.remove("hidden");
   });
+}
 
-  if (fifthNextButton) {
-    fifthNextButton.addEventListener("click", () => {
-      const selectedOptionTime = document.querySelector(".input-fifth").value;
-      const selectedOptionPlace = document.querySelector(".input-fourth").value;
+if (fifthNextButton) {
+  fifthNextButton.addEventListener("click", () => {
+    const selectedOptionTime = document.querySelector(".input-fifth").value;
+    const selectedOptionPlace = document.querySelector(".input-fourth").value;
 
-      if (!selectedOptionTime || !selectedOptionPlace) {
-        alert("Please choose a time!");
-        return;
-      }
+    if (!selectedOptionTime || !selectedOptionPlace) {
+      alert("Please choose a time!");
+      return;
+    }
 
-      let timeTypeText = "";
-      switch (selectedOptionTime) {
-        case "1":
-          timeTypeText = "Morning";
-          break;
-        case "2":
-          timeTypeText = "Afternoon";
-          break;
-        case "3":
-          timeTypeText = "Evening";
-          break;
-      }
+    let timeTypeText = "";
+    switch (selectedOptionTime) {
+      case "1":
+        timeTypeText = "morning";
+        break;
+      case "2":
+        timeTypeText = "afternoon";
+        break;
+      case "3":
+        timeTypeText = "evening";
+        break;
+      default:
+        timeTypeText = "unknown time";
+    }
 
-      document.getElementById("chosen-place-type").textContent =
-        selectedOptionPlace;
-      document.getElementById("chosen-time-type").textContent = timeTypeText;
+    const placeElement = document.getElementById("chosen-place-type");
+    const timeElement = document.getElementById("chosen-time-type");
 
-      document.querySelector(".fifth-window").classList.add("hidden");
-      document.querySelector(".six-window").classList.remove("hidden");
-    });
+    if (placeElement && timeElement) {
+      placeElement.textContent = selectedOptionPlace;
+      timeElement.textContent = timeTypeText;
+    } else {
+      console.error("Elements with the given IDs are missing!");
+    }
+
+    document.querySelector(".fifth-window").classList.add("hidden");
+    document.querySelector(".six-window").classList.remove("hidden");
+  });
+}
+
+const windows = [
+  document.querySelector(".input-container"),
+  document.querySelector(".second-window"),
+  document.querySelector(".third-window"),
+  document.querySelector(".fourth-window"),
+  document.querySelector(".fifth-window"),
+  document.querySelector(".six-window"),
+];
+
+document.querySelectorAll(".arrow").forEach((arrowButton) => {
+  arrowButton.addEventListener("click", () => {
+    navigateBack();
+  });
+});
+
+function navigateBack() {
+  const currentIndex = windows.findIndex(
+    (win) => !win.classList.contains("hidden")
+  );
+
+  if (currentIndex > 0) {
+    windows[currentIndex].classList.add("hidden");
+    windows[currentIndex - 1].classList.remove("hidden");
   }
 }

@@ -9,7 +9,7 @@
   <body>
     <header>
       <!-- first window  -->
-      <div class="container">
+      <div class="container window">
         <div class="input-container">
           <h1>Who are you?</h1>
           <input class="input" type="text" placeholder="Name" />
@@ -18,7 +18,7 @@
       </div>
 
       <!-- window be my date -->
-      <div class="second-window hidden">
+      <div class="second-window hidden window">
         <img class="gif" src="./img/Cats Memes.gif" alt="" />
         <h1>YAY IT'S YOU! ────୨ৎ────</h1>
         <p>Would you like to be my date? :></p>
@@ -27,6 +27,12 @@
           <button class="no-button">No, sorry 😭</button>
           <button class="maybe-button">Maybe? 🤔</button>
         </div>
+        <button class="arrow">
+          <svg width="30" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L5 9H10V22H14V9H19L12 2Z"></path>
+          </svg>
+        </button>
+
         <div class="image-container hidden">
           <img src="./img/sad-dog.png" alt="Image 1" class="image" />
         </div>
@@ -36,7 +42,7 @@
       </div>
 
       <!-- window type of date -->
-      <div class="third-window hidden">
+      <div class="third-window hidden window">
         <img class="gif-cat" src="./img/gif" alt="" />
         <h1>Awesome!💕</h1>
         <p>What type of date do you prefer??</p>
@@ -51,10 +57,15 @@
           <button class="next-button">Next</button>
           <button class="cancel-button">Cancel</button>
         </div>
+        <button class="arrow">
+          <svg width="30" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L5 9H10V22H14V9H19L12 2Z"></path>
+          </svg>
+        </button>
       </div>
 
       <!-- window to show the choice -->
-      <div class="fourth-window hidden">
+      <div class="fourth-window hidden window">
         <h1>
           Nice choice! <br />
           ⋆｡‧˚ʚ🧸ɞ˚‧｡⋆
@@ -65,10 +76,15 @@
           <button class="next-button">Next</button>
           <button class="fourth-cancel-button">Cancel</button>
         </div>
+        <button class="arrow">
+          <svg width="30" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L5 9H10V22H14V9H19L12 2Z"></path>
+          </svg>
+        </button>
       </div>
 
       <!-- window to show the time -->
-      <div class="fifth-window hidden">
+      <div class="fifth-window hidden window">
         <img class="gif-cat" src="./img/cute.gif(2)" alt="" />
         <h1 class="time-title">Timing is everything! 𓍢ִ໋☕️✧˚ ༘ ⋆</h1>
         <p class="time">
@@ -84,19 +100,28 @@
           <button class="next-button">Finish 💌</button>
           <button class="cancel-button">Cancel</button>
         </div>
+        <button class="arrow">
+          <svg width="30" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L5 9H10V22H14V9H19L12 2Z"></path>
+          </svg>
+        </button>
       </div>
 
       <!-- FInal window  -->
 
-      <div class="six-window hidden">
+      <div class="six-window hidden window">
         <h1>YAAAAY IT'S A DATE!</h1>
         <p>
-          I cannot wait to see you at
-          <span id="chosen-place-type"></span> around
+          I cannot wait to see you in the
           <span id="chosen-time-type"></span> I'll pick you up!💞
         </p>
 
         <button type="button" class="button">Can't wait!💝</button>
+        <button class="arrow">
+          <svg width="30" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L5 9H10V22H14V9H19L12 2Z"></path>
+          </svg>
+        </button>
       </div>
     </header>
     <script src="./script.js"></script>
