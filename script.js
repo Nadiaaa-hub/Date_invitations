@@ -32,12 +32,16 @@ imageElement.muted = true;
 imageElement.loop = true;
 imageElement.classList.add("hidden");
 document.body.appendChild(imageElement);
-
+  
 function checkInput() {
-  const input = document.querySelector(".input").value;
+  const input = document.querySelector(".input").value.trim().toLowerCase();
+
+ // Імена, які можна вводити
+ const allowedNames = ["vladic", "vlad", "vladislav", "влад", "владік", "владислав"];
+
   if (input === "") {
     alert("Please fill in the field.");
-  } else if (input === "Yura") {
+  } else if (allowedNames.includes(input)) {
     inputContainer.classList.add("hidden");
     thirdWindow.classList.add("hidden");
     secondWindow.classList.remove("hidden");
