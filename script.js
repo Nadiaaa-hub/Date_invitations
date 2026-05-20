@@ -41,9 +41,6 @@ imageElement.src = "./img/sad-dog.png";
 imageElement.classList.add("hidden");
 document.body.appendChild(imageElement);
 
-// Імена, які можна вводити
-const allowedNames = ["vladic", "vlad", "vladislav"];
-
 function hideAllWindows() {
   inputContainer.classList.add("hidden");
   secondWindow.classList.add("hidden");
@@ -59,15 +56,17 @@ function showWindow(window) {
 }
 
 function checkInput() {
-  const inputValue = inputName.value.trim().toLowerCase();
+  const input = document.querySelector(".input").value.trim().toLowerCase();
 
-  if (inputValue === "") {
+ // Імена, які можна вводити
+ const allowedNames = ["vladic", "vlad", "vladislav", "влад", "владік", "владислав"];
+
+  if (input === "") {
     alert("Please fill in the field.");
-    return;
-  }
-
-  if (allowedNames.includes(inputValue)) {
-    showWindow(secondWindow);
+  } else if (allowedNames.includes(input)) {
+    inputContainer.classList.add("hidden");
+    thirdWindow.classList.add("hidden");
+    secondWindow.classList.remove("hidden");
   } else {
     alert("You are not my date, sorry((");
   }
