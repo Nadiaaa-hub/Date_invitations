@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <!-- first window  -->
+      <div class="container">
+        <div class="input-container">
+          <h1>Who are you?</h1>
+          <input class="input" type="text" placeholder="Name" />
+          <button type="button" class="button">Enter</button>
+        </div>
+      </div>
+
+      <!-- window be my date -->
+      <div class="second-window hidden">
+        <button class="back-button">←</button>
+        <img class="gif" src="./img/Cats Memes.gif" alt="" />
+        <h1>YAY IT'S YOU! ────୨ৎ────</h1>
+        <p>Would you like to be my date? :></p>
+        <div class="buttons">
+          <button class="yes-button">Yes!💗</button>
+          <button class="no-button">No, sorry 😭</button>
+          <button class="maybe-button">Maybe? 🤔</button>
+        </div>
+        <div class="image-container hidden">
+          <img src="./img/sad-dog.png" alt="Image 1" class="image" />
+        </div>
+        <div class="image-container hidden">
+          <img src="./img/sad-dog2.png" alt="Image 2" class="image" />
+        </div>
+      </div>
+
+      <!-- window type of date -->
+      <div class="third-window hidden">
+        <button class="back-button">←</button>
+        <img class="gif-cat" src="./img/gif" alt="" />
+        <h1>Awesome!💕</h1>
+        <p>What type of date do you prefer??</p>
+        <select name="input-third" class="input-third">
+          <option value="" disabled selected>Choose a type</option>
+          <option value="1">🌹 Romantic dinner</option>
+          <option value="2">🗺️Outdoor adventure</option>
+          <option value="3">☕chill hangout</option>
+          <option value="4">🎁Surprise me</option>
+        </select>
+        <div class="date-type-buttons">
+          <button class="next-button">Next</button>
+          <button class="cancel-button">Cancel</button>
+        </div>
+      </div>
+
+      <!-- window to show the choice -->
+      <div class="fourth-window hidden">
+        <button class="back-button">←</button>
+        <h1>
+          Nice choice! <br />
+          ⋆｡‧˚ʚ🧸ɞ˚‧｡⋆
+        </h1>
+        <p>Where would you like to have <span id="chosen-date-type"></span></p>
+        <input class="input-fourth" type="text" />
+        <div class="date-type-buttons">
+          <button class="next-button">Next</button>
+          <button class="fourth-cancel-button">Cancel</button>
+        </div>
+      </div>
+
+      <!-- window to show the time -->
+      <div class="fifth-window hidden">
+        <button class="back-button">←</button>
+        <img class="gif-cat" src="./img/cute.gif(2)" alt="" />
+        <h1 class="time-title">Timing is everything! 𓍢ִ໋☕️✧˚ ༘ ⋆</h1>
+        <p class="time">
+          What time should we meet to <span id="chosen-place-type"></span>
+        </p>
+        <select class="input-fifth">
+          <option value="" disabled selected>Select a time</option>
+          <option value="1">🌄 Morning</option>
+          <option value="2">🌞 Afternoon</option>
+          <option value="3">🌙 Evening</option>
+        </select>
+        <div class="date-type-buttons">
+          <button class="next-button">Finish 💌</button>
+          <button class="cancel-button">Cancel</button>
+        </div>
+      </div>
+
+      <!-- FInal window  -->
+
+      <div class="six-window hidden">
+        <div class="final-info">
+          <h1>YAAAAY IT'S A DATE!</h1>
+          <p>
+            I cannot wait to see you at
+            <span id="final-place-type"></span> around
+            <span id="chosen-time-type"></span>. I'll pick you up!💞
+          </p>
+
+          <button type="button" class="final-button">Can't wait!💝</button>
+        </div>
+
+        <div class="love-screen hidden">
+          <button type="button" class="back-to-final-button">←</button>
+
+          <img
+            src="./img/big-love-icon-with-three-little-love_888709-40-Photoroom.png"
+            alt="Love icon"
+            class="final-love-image" />
+        </div>
+      </div>
+    </header>
+    <script src="./script.js"></script>
+  </body>
+</html>
