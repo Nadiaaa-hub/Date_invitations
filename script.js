@@ -32,12 +32,19 @@ imageElement.muted = true;
 imageElement.loop = true;
 imageElement.classList.add("hidden");
 document.body.appendChild(imageElement);
-  
+
 function checkInput() {
   const input = document.querySelector(".input").value.trim().toLowerCase();
 
- // Імена, які можна вводити
- const allowedNames = ["vladic", "vlad", "vladislav", "влад", "владік", "владислав"];
+  // Імена, які можна вводити
+  const allowedNames = [
+    "vladic",
+    "vlad",
+    "vladislav",
+    "влад",
+    "владік",
+    "владислав",
+  ];
 
   if (input === "") {
     alert("Please fill in the field.");
@@ -177,9 +184,12 @@ if (fourthNextButton) {
 }
 
 if (fifthNextButton) {
-  fifthNextButton.addEventListener("click", () => {
+  fifthNextButton.addEventListener("click", async () => {
     const selectedOptionTime = document.querySelector(".input-fifth").value;
     const selectedOptionPlace = document.querySelector(".input-fourth").value;
+    const selectedOptionName = document.querySelector(".input").value;
+    const selectedDateType =
+      document.getElementById("chosen-date-type").textContent;
 
     if (!selectedOptionTime || !selectedOptionPlace) {
       alert("Please choose a time!");
@@ -187,6 +197,7 @@ if (fifthNextButton) {
     }
 
     let timeTypeText = "";
+
     switch (selectedOptionTime) {
       case "1":
         timeTypeText = "morning";
@@ -211,6 +222,19 @@ if (fifthNextButton) {
       console.error("Elements with the given IDs are missing!");
     }
 
+    await fetch("https://formspree.io/f/mlgvjedl", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: selectedOptionName,
+        dateType: selectedDateType,
+        place: selectedOptionPlace,
+        time: timeTypeText,
+      }),
+    });
+
     document.querySelector(".fifth-window").classList.add("hidden");
     document.querySelector(".six-window").classList.remove("hidden");
   });
@@ -233,7 +257,7 @@ document.querySelectorAll(".arrow").forEach((arrowButton) => {
 
 function navigateBack() {
   const currentIndex = windows.findIndex(
-    (win) => !win.classList.contains("hidden")
+    (win) => !win.classList.contains("hidden"),
   );
 
   if (currentIndex > 0) {
